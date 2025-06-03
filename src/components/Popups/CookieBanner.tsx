@@ -1,23 +1,26 @@
-"use client"
+"use client";
 import { useEffect, useState } from "react";
 import Cookies from "js-cookie";
+import { useCookieStore } from "@/stores/useCookieStore";
 
 export default function CookieBanner() {
-    const [visible, setVisible] = useState(false);
+    const [initialCheckDone, setInitialCheckDone] = useState(false);
+    const { showBanner, setShowBanner } = useCookieStore();
 
     useEffect(() => {
         const consent = Cookies.get("cookie_consent");
         if (!consent) {
-            setVisible(true);
+            setShowBanner(true);
         }
+        setInitialCheckDone(true);
     }, []);
 
     const acceptCookies = () => {
         Cookies.set("cookie_consent", "true", { expires: 365 });
-        setVisible(false);
+        setShowBanner(false);
     };
 
-    if (!visible) return null;
+    if (!showBanner || !initialCheckDone) return null;
 
     return (
         <div className="fixed bottom-0 left-0 w-full bg-white border-t p-4 shadow-lg z-50">

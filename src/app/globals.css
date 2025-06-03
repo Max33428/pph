@@ -26,3 +26,19 @@ body {
                 Roboto, Oxygen, Ubuntu, Cantarell, "Fira Sans",
                 "Droid Sans", "Helvetica Neue", sans-serif;
 }
+
+html {
+  scroll-behavior: smooth;
+
+  box-sizing: border-box;
+  width: 100vw;
+  overflow-x: hidden;
+}
+
+* {
+  transition: color 0.3s, background 0.3s, border-color 0.3s, box-shadow 0.3s, opacity 0.3s;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}

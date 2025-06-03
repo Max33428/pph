@@ -19,7 +19,7 @@ export default function Header() {
         <>
       <header className="bg-white border-b border-gray-300 px-6 py-3.5">
           <div className="max-w-7xl mx-auto flex items-center justify-between">
-              <Link href="/src/components/static">
+              <Link href="/">
                   <Image src={"/web-logo.png"}
                          alt={"Pizza-Pasta-House"}
                          width={65}
@@ -29,7 +29,7 @@ export default function Header() {
               </Link>
 
               <nav className="group flex items-center space-x-3 font-semibold text-sm">
-                  <Link href={"/src/components/static"} className={`${pathname === "/" ? "underline" : ""} group-hover:text-gray-400 hover:text-red-800`}>
+                  <Link href={"/"} className={`${pathname === "/" ? "underline" : ""} group-hover:text-gray-400 hover:text-red-800`}>
                       Speisekarte anzeigen
                   </Link>
                   <Link href={"/contact"} className={`${isContact ? "underline" : ""} group-hover:text-gray-400 hover:text-red-800 `}>
